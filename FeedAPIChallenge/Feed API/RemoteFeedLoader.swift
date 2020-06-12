@@ -32,13 +32,10 @@ public final class RemoteFeedLoader: FeedLoader {
                 }
                 
                 do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    
-                    let itemsResponse = try decoder.decode(FeedImagesResponse.self, from: data)
+                    let itemsResponse = try JSONDecoder().decode(FeedImagesResponse.self, from: data)
                     let feedImages: [FeedImage] = itemsResponse.items.map {
-                        FeedImage(id: $0.imageId, description: $0.imageDesc,
-                                  location: $0.imageLoc, url: $0.imageUrl)
+                        FeedImage(id: $0.image_id, description: $0.image_desc,
+                                  location: $0.image_loc, url: $0.image_url)
                     }
                     
                     completion(.success(feedImages))
@@ -54,10 +51,10 @@ public final class RemoteFeedLoader: FeedLoader {
 
 struct FeedImagesResponse: Codable {
     struct FeedImageResponse: Codable {
-        var imageId: UUID
-        var imageUrl: URL
-        var imageDesc: String?
-        var imageLoc: String?
+        var image_id: UUID
+        var image_url: URL
+        var image_desc: String?
+        var image_loc: String?
     }
     
     var items: [FeedImageResponse]
