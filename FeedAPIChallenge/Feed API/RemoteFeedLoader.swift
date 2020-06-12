@@ -31,10 +31,34 @@ public final class RemoteFeedLoader: FeedLoader {
                     return
                 }
                 
-                completion(.failure(Error.connectivity))
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    
+                    let itemsResponse = try decoder.decode(FeedImagesResponse.self, from: data)
+                    let feedImages: [FeedImage] = itemsResponse.items.map {
+                        FeedImage(id: $0.imageId, description: $0.imageDesc,
+                                  location: $0.imageLoc, url: $0.imageUrl)
+                    }
+                    
+                    completion(.success(feedImages))
+                } catch {
+                    completion(.failure(Error.invalidData))
+                }
             default:
                 completion(.failure(Error.connectivity))
             }
         }
     }
+}
+
+struct FeedImagesResponse: Codable {
+    struct FeedImageResponse: Codable {
+        var imageId: UUID
+        var imageUrl: URL
+        var imageDesc: String?
+        var imageLoc: String?
+    }
+    
+    var items: [FeedImageResponse]
 }
