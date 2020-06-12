@@ -31,10 +31,7 @@ public final class RemoteFeedLoader: FeedLoader {
                     return
                 }
                                
-                let feedImages: [FeedImage] = itemsResponse.items.map {
-                    FeedImage(id: $0.image_id, description: $0.image_desc,
-                              location: $0.image_loc, url: $0.image_url)
-                }
+                let feedImages: [FeedImage] = itemsResponse.feedImages
                 completion(.success(feedImages))
                                                   
             default:
@@ -50,7 +47,18 @@ struct FeedImagesResponse: Codable {
         var image_url: URL
         var image_desc: String?
         var image_loc: String?
+        
+        var feedImage: FeedImage {
+            return FeedImage(id: image_id,
+                             description: image_desc,
+                             location: image_loc,
+                             url: image_url)
+        }
     }
     
     var items: [FeedImageResponse]
+    
+    var feedImages: [FeedImage] {
+        items.map { $0.feedImage }
+    }
 }
