@@ -25,23 +25,18 @@ public final class RemoteFeedLoader: FeedLoader {
             switch result {
             case let .success((data, response)):
                 guard response.statusCode == HTTP_200,
-                      let _ = try? JSONSerialization.jsonObject(with: data)
+                      let itemsResponse = try? JSONDecoder().decode(FeedImagesResponse.self, from: data)
                 else {
                     completion(.failure(Error.invalidData))
                     return
                 }
-                
-                do {
-                    let itemsResponse = try JSONDecoder().decode(FeedImagesResponse.self, from: data)
-                    let feedImages: [FeedImage] = itemsResponse.items.map {
-                        FeedImage(id: $0.image_id, description: $0.image_desc,
-                                  location: $0.image_loc, url: $0.image_url)
-                    }
-                    
-                    completion(.success(feedImages))
-                } catch {
-                    completion(.failure(Error.invalidData))
+                               
+                let feedImages: [FeedImage] = itemsResponse.items.map {
+                    FeedImage(id: $0.image_id, description: $0.image_desc,
+                              location: $0.image_loc, url: $0.image_url)
                 }
+                completion(.success(feedImages))
+                                                  
             default:
                 completion(.failure(Error.connectivity))
             }
