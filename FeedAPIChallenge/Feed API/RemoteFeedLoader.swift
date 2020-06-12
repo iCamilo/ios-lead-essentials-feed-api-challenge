@@ -35,8 +35,10 @@ public final class RemoteFeedLoader: FeedLoader {
     }
 }
 
-struct RemoteFeedMapper {
-    struct FeedImagesResponse: Codable {
+// MARK: - Mapper
+
+private struct RemoteFeedMapper {
+     private struct FeedImagesResponse: Codable {
         var items: [FeedImageResponse]
         var feedImages: [FeedImage] {
             items.map { $0.feedImage }
@@ -57,15 +59,16 @@ struct RemoteFeedMapper {
         }
     }
     
-    static let HTTP_200 = 200
+    private static let HTTP_200 = 200
     
     static func map(data: Data, response: HTTPURLResponse) -> FeedLoader.Result {
         guard response.statusCode == HTTP_200,
               let itemsResponse = try? JSONDecoder().decode(FeedImagesResponse.self, from: data)
+        
         else {
             return .failure(RemoteFeedLoader.Error.invalidData)
         }
-                       
+                            
         return .success(itemsResponse.feedImages)
     }
 }
