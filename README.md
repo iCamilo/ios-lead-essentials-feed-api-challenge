@@ -93,7 +93,13 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- There shouldn't be any `print` statements, such as `print(error)`.
 
-6) When all tests are passing and you're done implementing a *clean solution*, create a Pull Request from your branch to the main challenge repo with the title:  **Your Name - Feed API Challenge**.
+6) When all tests are passing and you're done implementing your solution:
+
+	- Create a Pull Request from your branch to the main challenge repo's matching branch.
+
+		- For example, if you chose the `xcode12_4` branch, your PR should be from your branch into the main repo's `xcode12_4` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
+
+	- The title of the Pull Request should be: **Your Name - Feed API Challenge**.
 
 7) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
