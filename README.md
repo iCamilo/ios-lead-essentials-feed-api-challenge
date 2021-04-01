@@ -113,7 +113,13 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- The title of the Pull Request should be: **Your Name - Feed API Challenge**.
 
-9) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
+9) Review your code in the Pull Request (PR) and make sure it follows **all** the instructions above.
+
+	- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
+
+10) After you review your code and it follows **all** the instructions above:
+	
+	- Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
 
 ## Guidelines
