@@ -70,10 +70,14 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 	- The `FeedAPIChallenge` folder contains the production types, including the `RemoteFeedLoader` and dependencies for requesting and loading the feed remotely. 
 
 		- ⚠️ Important: ***You should only change the `RemoteFeedLoader.swift` file to implement the `load` method.***
+
+		- Do not change any other files in the target.
 	
 	- The `Tests` folder contains the test cases. 
 
 		- ⚠️ Important: ***You should only change the `LoadFeedFromRemoteUseCaseTests.swift` file to implement all test cases.***
+
+		- Do not change any other files in the test target.
 
 	- Do not change the indentation in the project.
 
@@ -93,7 +97,15 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- There shouldn't be any `print` statements, such as `print(error)`.
 
-6) When all tests are passing and you're done implementing your solution:
+6) The `FeedImage` should *not* implement `Decodable` - even in extensions. 
+
+	- That's because the `CodingKeys` to decode the JSON are API-specific details defined in the backend. So declaring the `CodingKeys` in the `FeedImage` will couple it with API implementation details. And since other modules depend on the `FeedImage`, they'll also be coupled with API implementation details.
+
+	- Suggestion: Create an API-specific struct in the 'Feed API' module to perform the decoding. Thus, preventing API details from leaking into other modules. So, for example, if there's a change in the backend, it doesn't propagate everywhere in the codebase. You just update the Feed API module without affecting others.
+
+7) Make careful and proper use of access control, marking as `private` or `internal` any implementation details that aren’t referenced from other external components.
+
+8) When all tests are passing and you're done implementing your solution:
 
 	- Create a Pull Request from your branch to the main challenge repo's matching branch.
 
@@ -101,7 +113,7 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- The title of the Pull Request should be: **Your Name - Feed API Challenge**.
 
-7) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
+9) Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
 
 
 ## Guidelines
@@ -116,8 +128,6 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 5) The code should be carefully organized and easy to read (e.g. indentation must be consistent).
 
-6) Make careful and proper use of access control, marking as `private` any implementation details that aren’t referenced from other external components.
-
-7) Aim to write self-documenting code by providing context and detail when naming your components, avoiding explanations in comments.
+6) Aim to write self-documenting code by providing context and detail when naming your components, avoiding explanations in comments.
 
 Happy coding!
