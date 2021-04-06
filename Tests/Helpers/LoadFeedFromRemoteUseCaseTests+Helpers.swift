@@ -6,7 +6,6 @@ import XCTest
 import FeedAPIChallenge
 
 extension LoadFeedFromRemoteUseCaseTests {
-	
 	func expect(_ sut: RemoteFeedLoader, toCompleteWith expectedResult: Result<[FeedImage], RemoteFeedLoader.Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
 		let exp = expectation(description: "Wait for load completion")
 		
@@ -29,5 +28,4 @@ extension LoadFeedFromRemoteUseCaseTests {
 		
 		waitForExpectations(timeout: 0.1)
 	}
-	
 }
