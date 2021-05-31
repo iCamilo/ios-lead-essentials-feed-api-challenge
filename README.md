@@ -64,11 +64,11 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 1) Fork the latest version of the challenge repo. Here's <a href="https://guides.github.com/activities/forking" target="_blank">how forking works</a>.
 
-2) Open the `FeedAPIChallenge.xcodeproj` project on Xcode 12.4.
+2) Open the `FeedAPIChallenge.xcodeproj` project on Xcode 12.5.
 	
 	- Older Xcode versions are not supported.
 	
-	- Challenges submitted with branches other than `xcode12_4` will be rejected.
+	- Challenges submitted with branches other than `xcode12_5` will be rejected.
 
 3) There are two main folders in the project:
 	- The `FeedAPIChallenge` folder contains the production types, including the `RemoteFeedLoader` and dependencies for requesting and loading the feed remotely. 
