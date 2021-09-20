@@ -1,4 +1,4 @@
-# The Feed API challenge - iOSLeadEssentials.com
+# The Feed API Challenge - iOSLeadEssentials.com
 
 ![](https://github.com/essentialdevelopercom/ios-lead-essentials-feed-api-challenge/workflows/CI/badge.svg)
 
