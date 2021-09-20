@@ -109,13 +109,13 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- Suggestion: Create an API-specific struct in the 'Feed API' module to perform the decoding. Thus, preventing API details from leaking into other modules. So, for example, if there's a change in the backend, it doesn't propagate everywhere in the codebase. You just update the Feed API module without affecting others.
 
-7) Make careful and proper use of access control, marking as `private` any implementation details that aren’t referenced from other external components.
+7) Make careful and proper use of access control (e.g., marking as `private` any implementation details that aren’t referenced from other external components).
 
 8) When all tests are passing and you're done implementing your solution:
 
 	- Review your code and make sure it follows **all** the instructions above.
 
-		- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
+		- If it doesn't, make the appropriate changes, push, and review your code again.
 
 	- If it does, create a Pull Request from your branch to the main challenge repo's matching branch.
 
