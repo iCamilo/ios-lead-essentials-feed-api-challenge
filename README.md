@@ -113,19 +113,15 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 8) When all tests are passing and you're done implementing your solution:
 
-	- Create a Pull Request from your branch to the main challenge repo's matching branch.
+	- Review your code and make sure it follows **all** the instructions above.
+
+		- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
+
+	- If it does, create a Pull Request from your branch to the main challenge repo's matching branch.
 
 		- For example, if you implemented the challenge using the `xcode12_5` branch, your PR should be from your fork's `xcode12_5` branch into the main repo's `xcode12_5` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 
-	- The title of the Pull Request should be: **Your Name - Feed API Challenge**.
-
-9) Review your code in the Pull Request (PR) and make sure it follows **all** the instructions above.
-
-	- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
-
-10) After you review your code and it follows **all** the instructions above:
-	
-	- Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
+	- The title of the Pull Request should be: **Your Name - Feed API Challenge**
 
 
 ## Guidelines
