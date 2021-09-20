@@ -123,6 +123,7 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- The title of the Pull Request should be: **Your Name - Feed API Challenge**
 
+9) We'll review your Pull Request and approve it or request any changes required with detailed feedback.
 
 ## Guidelines
 
