@@ -1,4 +1,4 @@
-# The Feed API challenge - iOSLeadEssentials.com
+# The Feed API Challenge - iOSLeadEssentials.com
 
 ![](https://github.com/essentialdevelopercom/ios-lead-essentials-feed-api-challenge/workflows/CI/badge.svg)
 
@@ -109,24 +109,21 @@ We've provided you with appropriate tests to guide and validate your solution. Y
 
 	- Suggestion: Create an API-specific struct in the 'Feed API' module to perform the decoding. Thus, preventing API details from leaking into other modules. So, for example, if there's a change in the backend, it doesn't propagate everywhere in the codebase. You just update the Feed API module without affecting others.
 
-7) Make careful and proper use of access control, marking as `private` or `internal` any implementation details that aren’t referenced from other external components.
+7) Make careful and proper use of access control (e.g., marking as `private` any implementation details that aren’t referenced from other external components).
 
 8) When all tests are passing and you're done implementing your solution:
 
-	- Create a Pull Request from your branch to the main challenge repo's matching branch.
+	- Review your code and make sure it follows **all** the instructions above.
+
+		- If it doesn't, make the appropriate changes, push, and review your code again.
+
+	- If it does, create a Pull Request from your branch to the main challenge repo's matching branch.
 
 		- For example, if you implemented the challenge using the `xcode12_5` branch, your PR should be from your fork's `xcode12_5` branch into the main repo's `xcode12_5` branch (DO NOT MIX Xcode versions or you'll have merge conflicts!).
 
-	- The title of the Pull Request should be: **Your Name - Feed API Challenge**.
+	- The title of the Pull Request should be: **Your Name - Feed API Challenge**
 
-9) Review your code in the Pull Request (PR) and make sure it follows **all** the instructions above.
-
-	- If it doesn't, make the appropriate changes, push, and review your code in the PR again.
-
-10) After you review your code and it follows **all** the instructions above:
-	
-	- Post a comment in the challenge page in the academy with the link to your PR, so we can review your solution and provide feedback.
-
+9) We'll review your Pull Request and approve it or request any changes required with detailed feedback.
 
 ## Guidelines
 
