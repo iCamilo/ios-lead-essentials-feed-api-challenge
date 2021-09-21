@@ -154,6 +154,7 @@
 				08BBFF4E2492A46F00141A91 /* Sources */,
 				08BBFF4F2492A46F00141A91 /* Frameworks */,
 				08BBFF502492A46F00141A91 /* Resources */,
+				1892E90626FA089600AB9976 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,6 +256,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ $OTHER_SWIFT_FLAGS == *\"-D ED_SKIP_SWIFT_FORMAT\"* ]]; then\n  exit 0;\nfi\n\nBuildTools/SwiftFormat/swiftformat \"$SRCROOT\" --swiftversion 5 --indent tab --rules indent,linebreaks,trailingSpace,consecutiveBlankLines,blankLinesAtEndOfScope,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveSpaces,duplicateImports,elseOnSameLine,emptyBraces,redundantBreak,redundantInit,redundantLetError,redundantNilInit,redundantType,redundantVoidReturnType,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideGenerics,spaceInsideParens,void --quiet\n";
+		};
+		1892E90626FA089600AB9976 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat .\nelse\necho \"error: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nexit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
